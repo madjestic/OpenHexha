@@ -1,6 +1,6 @@
 # hexha
 
-![](https://github.com/madjestic/hexha/blob/main/OpenHexha.gif)
+![](https://github.com/madjestic/OpenHexha/blob/main/hexha.gif)
 
 ascii trading platform, 
 
