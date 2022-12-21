@@ -1,0 +1,111 @@
+cabal-version:       3.0
+name:                hexha
+version:             0.2.0.0
+synopsis:            ascii trading platform
+description:         Please see the README on GitHub at <https://github.com/madjestic/OpenHexha#readme>
+license:             BSD-3-Clause
+license-file:        LICENSE
+author:              madjestic
+maintainer:          madjestic13@gmail.com
+copyright:           Vladimir Lopatin
+category:            CLI App
+build-type:          Simple
+extra-source-files:  ChangeLog.md
+                     README.md
+                     LICENSE
+
+executable hexha
+  ghc-options:        -threaded -Wall -Wcompat -O2
+  --ghc-options:        -O2 -threaded -Wall -Werror -Wcompat -Widentities -Wno-unused-top-binds -Wno-orphans
+  main-is:             Main.hs
+  build-depends:       base
+                     , brick
+                     , containers                     
+                     , vty
+                     , text
+                     , microlens
+                     , microlens-mtl
+                     , microlens-th
+                     , mtl
+                     , transformers
+                     , vector
+                     , aeson                 
+                     , aeson-casing          
+                     , array                 
+                     , bytestring            
+                     , cryptonite            
+                     , http-api-data         
+                     , http-client           
+                     , http-client-tls       
+                     , http-types            
+                     , http-conduit          
+                     , io-streams            
+                     , memory                
+                     , network               
+                     , servant               
+                     , servant-client        
+                     , servant-client-core   
+                     , strict                
+                     , time                  
+                     , unagi-streams         
+                     , uuid                  
+                     , websockets            
+                     , wuss                  
+                     
+  hs-source-dirs:      app
+                     , src
+  default-language:    Haskell2010
+  other-modules:
+                       Paths_hexha
+                     , Utils
+                     , CoinbasePro
+                     , IEX
+                     , Net.CoinbasePro.Authenticated.Headers
+                     , Net.CoinbasePro.Authenticated.Request
+                     , Net.CoinbasePro.Environment
+                     , Net.CoinbasePro.Headers
+                     , Net.CoinbasePro.MarketData.Types
+                     , Net.CoinbasePro.Request
+                     , Net.CoinbasePro.Types
+                     , Net.CoinbasePro.WebSocketFeed
+                     , Net.CoinbasePro.WebSocketFeed.Channel
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Full.Activate
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Full.Change
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Full.Done
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Full.Match
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Full.Open
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Full.Received
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Heartbeat
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Level2
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Status
+                     , Net.CoinbasePro.WebSocketFeed.Channel.Ticker
+                     , Net.CoinbasePro.WebSocketFeed.Request
+                     , Net.CoinbasePro.WebSocketFeed.Response
+                     , Net.CoinbasePro.MarketData.AggregateOrderBook
+                     , Net.CoinbasePro.MarketData.FullOrderBook
+                     , Net.CoinbasePro.Unauthenticated
+                     , Net.CoinbasePro.Unauthenticated.API
+                     , Net.IEX.Book
+                     , Net.IEX.Chart
+                     , Net.IEX.Company
+                     , Net.IEX.DelayedQuote
+                     , Net.IEX.Dividend
+                     , Net.IEX.Earnings
+                     , Net.IEX.EffectiveSpread
+                     , Net.IEX.Financials
+                     , Net.IEX.IntraDayStats
+                     , Net.IEX.Market
+                     , Net.IEX.NewsItem
+                     , Net.IEX.OHLC
+                     , Net.IEX.Previous
+                     , Net.IEX.PriceTime
+                     , Net.IEX.Quote
+                     , Net.IEX.RecentStats
+                     , Net.IEX.RecordStats
+                     , Net.IEX.Relevant
+                     , Net.IEX.Split
+                     , Net.IEX.Stats
+                     , Net.IEX.TimeSeries
+                     , Net.IEX.VolumeByVenue
+                     , Net.Stocks
+                     , Data.Text.Chart
